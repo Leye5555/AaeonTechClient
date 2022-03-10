@@ -1,0 +1,115 @@
+.payment-container-wrap {
+    padding: 3rem 3rem 0 18rem;
+}
+.payment-container {
+    margin-left : 18vw;
+    height: 100vh;
+    width : calc(100%-18vw);
+    display: grid;
+    padding-top: 100px;
+}
+
+.payment-grid {
+    padding: 2rem 2rem 0rem 2rem;
+    background-color: rgba(0,0,255,0.7);
+    display : grid;
+    width : 100%;
+    height : 80%;
+    grid-template-columns : repeat(auto-fill, minmax(250px,1fr));
+    gap : 2rem;
+    border-radius: 20px;
+    transform: translateX(-7rem);
+    
+}
+
+.payment-card {
+    background-color: #212121c9;
+    height: 70%;
+    display: grid;
+    place-items: center;
+    border-radius: 20px;
+}
+.payment-input {
+    width: 100%;
+    height: 40px;
+    border-radius: 20px;
+    font-size: 1rem;
+    padding-inline : 0.5rem;
+}
+
+.payment-input::placeholder {
+    padding-left: 1rem;
+    color : rgb(253,145,22)
+}
+@media screen and (min-width : 1510px) {
+    .payment-grid {
+        width: 60%;
+    }
+}
+@media screen and (max-width : 1080px) {
+    .payment-container-wrap {
+        padding: 2rem;
+    }
+    .payment-container {
+        width: 100%;
+        margin-left: 0px;
+        place-items: center;
+    }
+    .payment-grid {
+        transform: translateY(-5rem);
+        width: 60%;
+    }
+}
+
+
+@media screen and (max-width : 917px) {
+    .payment-grid {
+        padding-bottom: 2rem;
+    }
+    .payment-card { 
+        height: 100%;
+    }
+}
+@media screen and (max-width : 556px) {
+    .payment-container-wrap {
+        padding: 1rem;
+    }
+    .payment-container {
+       place-items: unset;
+       padding-top: 0px;
+    }
+    .payment-grid {
+        margin-top: 2rem;
+        height: 80vh;
+        width: 100%;
+        padding: 2rem 0.5rem;
+        transform: translateY(0px);
+    }
+ 
+}
+
+.payment-card:nth-child(1),
+.payment-card:nth-child(2),
+.payment-card:nth-child(3),
+.payment-card:nth-child(4){
+    opacity: 0;
+    transform: translateY(100px);
+}
+.payment-card:nth-child(1) {
+    animation: scroll1 1000ms forwards linear;
+}
+.payment-card:nth-child(2) {
+    animation: scroll1 1000ms forwards 300ms linear;
+}
+.payment-card:nth-child(3) {
+    animation: scroll1 1000ms forwards 600ms linear;
+}
+.payment-card:nth-child(4) {
+    animation: scroll1 1000ms forwards 900ms linear;
+}
+@keyframes scroll1 {
+    to{
+        opacity: 1;
+        transform: translateY(0);}
+}
+    

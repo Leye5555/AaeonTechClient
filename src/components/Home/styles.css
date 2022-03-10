@@ -1,0 +1,379 @@
+.home-container {
+    width: 100vw;
+    height : 100vh; 
+    overflow-x: hidden; 
+    position: relative;
+    z-index: 1; 
+ 
+}
+
+.logo-container {
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  padding-top: 10px;
+  top : 0px;
+  z-index: 4;
+}
+
+
+
+.logo-container  img {
+  width: 100px;
+}
+
+.home-title {
+    width: 100%;
+    height : 90%;
+    position: relative;
+    font-family: var(--bgFont-backup);
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(500px,1fr));
+    row-gap: 2rem;
+}
+.home-title-wrap {
+  position: absolute;
+   top : 10vw;
+   bottom: 0;
+   left: 0;
+   right: 0;
+  display: grid;
+  place-items: center;
+}
+
+.home-title > h1 {
+    font-family: var(--bgFont);
+    font-size: 3rem;
+    color: var(--main-color);
+    text-align: center;
+    transform: translateY(200px);
+    opacity: 0;
+    animation: wake-up 1s linear 1s forwards;
+}
+
+@keyframes wake-up {
+    to { transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+.bg-small1 {
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+}
+
+.bg-small2 {
+    font-size: 1.5rem;
+    color: var(--main-color);
+}
+
+.bg-small3 {
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+}
+.wave {
+    position: relative;
+    width: 500px;
+    height: 300px;
+    overflow: hidden;
+    transform: translateX(300px);
+    opacity: 0;
+    animation: wake-up2 1s linear 500ms forwards;  
+}
+
+@keyframes wake-up2 {
+    to {
+    transform: translateX(0px);
+    opacity: 1;
+    } 
+}
+
+
+.wave__1 {
+    height: 10px;
+    position: relative;
+  }
+  
+  .wave__1::before,
+  .wave__2::before,
+  .wave__3::before,
+  .wave__4::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-repeat: repeat;
+    height: 10px;
+    background-size: 20px 20px;
+    background-image: radial-gradient(circle at 10px -5px, var(--secondary-color) 12px, white 13px);
+  }
+  
+  .wave__1::after,
+  .wave__2::after,
+  .wave__3::after,
+  .wave__4::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-repeat: repeat;
+    height: 15px;
+    background-size: 40px 20px;
+    background-image: radial-gradient(circle at 10px 15px, white 12px, transparent 13px);
+  }
+
+  .wave__2 {
+    height: 10px;
+    position: relative;
+    transform: rotate(90deg) translate(100px, -2450%);
+  }
+  
+  .wave__3 {
+    height: 10px;
+    position: relative;
+    transform: rotate(-90deg) translate(-100px, -2450%);
+  }
+  
+  .wave__4 {
+    height: 10px;
+    position: relative;
+    transform: rotate(180deg) translateY(-2590%);
+ }
+
+ .background {
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     overflow: hidden;
+ }
+ .background > img {
+     display: block;
+     width: 1000px;
+     height: 700px;
+     transform: translate(-50px, -10px);
+     animation: bgMove 20s linear infinite;
+ }
+
+ @keyframes bgMove {
+   0% {
+    transform: translate(-50px, -10px);
+   }
+   25% {
+    transform: translate(-100px, -70px);
+   }
+   50% {
+    transform: translate(-130px, -200px);
+   }
+   75% {
+    transform: translate(-430px, -200px);
+   }
+   100% {
+    transform: translate(-500px, -400px);
+   }
+   101% {
+       transform: translate(0px, 0px);
+   }
+ }
+
+
+ .dots {
+   position: relative;
+   width: 100%;
+   text-align: center;
+   height: max-content;
+   
+ }
+
+ .dot {
+   display: inline-block;
+   width: 5px;
+   height: 5px;
+   border-radius: 50%;
+   background-color: var(--main-color);
+   margin-inline: 2px;
+   cursor: pointer;
+ }
+
+ .currentPage{
+    width: 15px;
+    background-color: var(--secondary-color);
+ }
+
+
+ .home-title >  .second-heading {
+   color: var(--secondary-color);
+ }
+
+ .home-title > .third-heading {
+   color: var(--tertiary-color);
+ }
+
+
+
+
+ @media screen and (max-width : 1024px) {
+  .home-container {
+    width: 100vw;
+    height : 100vh; 
+    overflow-x: hidden;  
+   }
+  
+ }
+ 
+ @media screen and (max-width : 999.5px) {
+   .home-title {
+      height: max-content;
+   }
+ }
+ @media screen and (max-width : 799px){
+   .home-title {
+     top : 50px;
+   }
+ }
+
+ @media screen and (max-width : 600.5px) {
+  .home-container {
+    left: 3px;
+  }
+   
+  .home-title-wrap {
+    position: absolute;
+    inset : 0 0 0 0;
+    top : -60px;
+    bottom : 0;
+    left : 0;
+    right : 0;
+    display: grid;
+    place-items: unset;
+  }
+
+  .home-title {
+    width: 100%;
+    height : max-content;
+    position: relative;
+    display: grid;
+    place-items: center;
+    transform: translateY(0);
+    grid-template-rows: 1fr 200px;
+    grid-template-columns: 100vw;
+    gap: 0;
+    top : unset;
+}
+  
+  .home-title > h1 {
+    width: 50%;
+    font-size: 2.5rem;
+    height: max-content;
+  }
+
+  .background > img {
+    height: 900px;
+    width: 1100px;
+  }
+  .wave {
+    height: 400px;
+  }
+
+  .wave__4 {
+    height: 10px;
+    position: relative;
+    transform: rotate(180deg) translateY(-3590%);
+ }
+
+
+.home-title > h1 {
+  width: 100%;
+}
+
+.wave {
+  grid-area : 1/1/2/2;
+}
+
+.wave__2 {
+  height: 10px;
+  position: relative;
+  transform: rotate(90deg) translate(130px, -2450%);
+}
+
+.wave__3 {
+  height: 10px;
+  position: relative;
+  transform: rotate(-90deg) translate(-130px, -2450%);
+}
+
+ }
+
+  
+ @media screen and (max-width : 555px) {
+  .home-container {
+    left: -3px;
+  }
+}
+
+ @media screen and (max-width : 512px) {
+  .home-container {
+    top: -10px;
+  }
+}
+
+@media screen and (max-width : 498px) {
+  .home-container {
+    left: -2px;
+  }
+}
+
+
+
+ @media screen and (max-width: 363px) {
+ .home-container {
+    left: 0px;
+ }
+
+ .home-title-wrap {
+  position: absolute;
+   top : -60px;
+   bottom: 0;
+   left: 0;
+   right: 0;
+  display: grid;
+  place-items: unset;
+  height: max-content;
+}
+ .wave {
+    width: 600px;
+
+ }
+
+ .wave__3 {
+    visibility: hidden;
+ }
+
+  .home-title {
+    grid-template-rows: 1fr 140px;
+    grid-template-columns: 100vw;
+    place-items: start;
+    height: max-content;
+  }
+
+  .home-title > h1 {
+    font-size: 2rem;
+    
+  }
+
+
+  .dots {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    height: max-content;
+    margin-top: 20px;
+   
+    
+  }
+ 
+
+ }
+

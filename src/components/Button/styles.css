@@ -1,0 +1,44 @@
+.btn-wrap {
+   width: 100%;
+   height: 50px;
+}
+
+.btn {
+   width: 150px;
+   height: 35px;
+   padding: 5px;
+   border-radius: 10px;
+   cursor: pointer;
+}
+
+.primary {
+   background-color: blue;
+   color: white;
+   width: 150px;
+   height: 35px;
+   padding: 5px;
+}
+
+.secondary {
+   background-color: rgb(253, 145, 22);
+   color: white;
+   width: 230px;
+   height: 35px;
+   padding: 5px;
+}
+
+.tertiary {
+   background-color: black;
+   color: white;
+   width: 250px;
+   height: 35px;
+   padding: 5px;
+}
+
+.fullWidth {
+   width: 100%;
+}
+
+.medium {
+   width: max(50%, 200px);
+}
